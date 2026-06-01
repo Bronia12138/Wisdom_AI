@@ -5,26 +5,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tianji</groupId>
-    <artifactId>zkxt</artifactId>
+    <artifactId>gtxt</artifactId>
     <version>1.0.0</version>
     <modules>
-        <module>zk-common</module>
-        <module>zk-auth</module>
-        <module>zk-api</module>
-        <module>zk-gateway</module>
-        <module>zk-user</module>
-        <module>zk-message</module>
-        <module>zk-media</module>
-        <module>zk-course</module>
-        <module>zk-search</module>
-        <module>zk-learning</module>
-        <module>zk-pay</module>
-        <module>zk-trade</module>
-        <module>zk-exam</module>
-        <module>zk-promotion</module>
-        <module>zk-data</module>
-        <module>zk-remark</module>
-        <module>zk-aigc</module>
+        <module>gt-common</module>
+        <module>gt-auth</module>
+        <module>gt-api</module>
+        <module>gt-gateway</module>
+        <module>gt-user</module>
+        <module>gt-message</module>
+        <module>gt-media</module>
+        <module>gt-course</module>
+        <module>gt-search</module>
+        <module>gt-learning</module>
+        <module>gt-pay</module>
+        <module>gt-trade</module>
+        <module>gt-exam</module>
+        <module>gt-promotion</module>
+        <module>gt-data</module>
+        <module>gt-remark</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -41,7 +40,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <zkxt.version>1.0</zkxt.version>
+        <gtxt.version>1.0</gtxt.version>
         <org.projectlombok.version>1.18.36</org.projectlombok.version>
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2023.0.3.2</spring-cloud-alibaba.version>
@@ -137,9 +136,9 @@
                 <version>${redisson.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.aspeczk</groupId>
-                <artifactId>aspeczkweaver</artifactId>
-                <version>${aspeczk.version}</version>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
             </dependency>
             <!--腾讯cos-->
             <dependency>
@@ -201,10 +200,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.13.0</version>
+                    <version>3.10.1</version>
                     <configuration>
                         <source>17</source> <!-- depending on your project -->
                         <target>17</target> <!-- depending on your project -->
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${org.projectlombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
             </plugins>
